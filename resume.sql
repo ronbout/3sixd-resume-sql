@@ -1261,7 +1261,7 @@ CREATE TABLE `skill` (
 
 LOCK TABLES `skill` WRITE;
 /*!40000 ALTER TABLE `skill` DISABLE KEYS */;
-INSERT INTO `skill` VALUES (1,'JavaScript','Any version of Javascript test','https://developer.mozilla.org/en-US/docs/Web/JavaScript'),(2,'PHP',NULL,NULL),(3,'MySQL',NULL,NULL),(4,'Oracle',NULL,NULL),(5,'Java',NULL,NULL),(6,'Visual Studio','',''),(7,'Scrum',NULL,NULL),(8,'Agile Methodology',NULL,NULL),(9,'Cisco 7600',NULL,NULL),(10,'Cisco 7200',NULL,NULL),(11,'Cisco 3800',NULL,NULL),(12,'Cisco 3600',NULL,NULL),(13,'Cisco 2900',NULL,NULL),(14,'Cisco 2800',NULL,NULL),(15,'Cisco 2600',NULL,NULL),(16,'Cisco 1800',NULL,NULL),(17,'Cisco 1700',NULL,NULL),(18,'OSPF',NULL,NULL),(19,'EIGRP',NULL,NULL),(20,'BGP',NULL,NULL),(21,'RIP v1/v2',NULL,NULL),(22,'PBR',NULL,NULL),(23,'Route Filtering',NULL,NULL),(24,'Redistribution',NULL,NULL),(25,'Summarization',NULL,NULL),(26,'Static Routing',NULL,NULL),(27,'Cisco Nexus 2K',NULL,NULL),(28,'Cisco Nexus 5K',NULL,NULL),(29,'Cisco Nexus 7K',NULL,NULL),(30,'Cisco Catalyst 2900',NULL,NULL),(31,'Cisco Catalyst 3500',NULL,NULL),(32,'Cisco Catalyst 3700',NULL,NULL),(33,'Cisco Catalyst 6500',NULL,NULL),(34,'Cisco Catalyst 4500',NULL,NULL),(35,'Cisco Catalyst 3850',NULL,NULL),(36,'Cisco Catalyst 3560',NULL,NULL),(37,'Cisco Catalyst 3750',NULL,NULL),(38,'Cisco Catalyst 2960',NULL,NULL),(39,'LAN',NULL,NULL),(40,'VTP',NULL,NULL),(41,'STP',NULL,NULL),(42,'PVST+',NULL,NULL),(43,'RPVST+',NULL,NULL),(44,'Inter VLAN routing & Multi-Layer Switch',NULL,NULL),(45,'Etherchannels',NULL,NULL),(46,'Transparent Bridging',NULL,NULL),(47,'Cisco ASA 5580-20',NULL,NULL),(48,'ACL',NULL,NULL),(49,'IPSEC',NULL,NULL),(50,'F5 Load Balancer',NULL,NULL),(51,'Checkpoint',NULL,NULL),(52,'IOS Firewall features',NULL,NULL),(53,'Palo Alto',NULL,NULL),(54,'DMZ Setup',NULL,NULL),(55,'NAT/PAT',NULL,NULL),(56,'F5 Networks (Big-IP) LTM 8900',NULL,NULL),(57,'6400',NULL,NULL),(58,'PPP',NULL,NULL),(59,'HDLC',NULL,NULL),(60,'Channelized links (T1/T3)',NULL,NULL),(61,'Fiber Optic Circuits',NULL,NULL),(62,'Frame Relay',NULL,NULL),(63,'VOIP',NULL,NULL),(64,'Ethernet (IEEE 802.3)',NULL,NULL),(65,'Fast Ethernet',NULL,NULL),(66,'Gigabit Ethernet',NULL,NULL),(67,'HSRP',NULL,NULL),(68,'GLBP',NULL,NULL),(69,'Riverbed Steelhead Appliance',NULL,NULL),(70,'Infoblox',NULL,NULL),(71,'IOS and Features',NULL,NULL),(72,'IRDP',NULL,NULL),(73,'NAT',NULL,NULL),(74,'SNMP',NULL,NULL),(75,'SYSLOG',NULL,NULL),(76,'NTP',NULL,NULL),(77,'DHCP',NULL,NULL),(78,'CDP',NULL,NULL),(79,'TFTP',NULL,NULL),(80,'FTP',NULL,NULL),(81,'TACACS+',NULL,NULL),(82,'RADIUS',NULL,NULL),(83,'Cisco ACS',NULL,NULL),(84,'Wireshark',NULL,NULL),(86,'Solarwinds',NULL,NULL),(87,'TCP dump',NULL,NULL),(88,'Windows 2003',NULL,NULL),(89,'Windows 2008 Server',NULL,NULL),(90,'FTP Server',NULL,NULL),(91,'Proxy Server',NULL,NULL),(92,'eMail Management Server',NULL,NULL),(93,'Linux',NULL,NULL),(94,'Cisco Call Manager',NULL,NULL),(95,'Exchange 2003',NULL,NULL),(96,'Microsoft Visio',NULL,NULL),(97,'Microsoft Outlook',NULL,NULL),(98,'Outlook Express',NULL,NULL),(99,'Cisco 3640',NULL,NULL),(100,'Cisco 12000',NULL,NULL),(101,'Cisco 3845',NULL,NULL),(102,'Cisco Catalyst 3550',NULL,NULL),(103,'Cisco',NULL,NULL),(104,'ASA5510',NULL,NULL),(105,'ASA',NULL,NULL),(106,'Cicso 2248',NULL,NULL),(107,'Cisco 3560',NULL,NULL),(108,'Cisco 5020',NULL,NULL),(109,'Cisco 6509',NULL,NULL),(111,'Cisco Nexus',NULL,NULL),(112,'Cisco Catalyst',NULL,NULL),(113,' Visual Studio 2012/2013','',''),(114,' C#',NULL,NULL),(115,' .Net Framework 4.0/4.5',NULL,NULL),(116,' WCF',NULL,NULL),(117,' Web API',NULL,NULL),(118,' PRISM Framework',NULL,NULL),(119,' Entity Framework','',''),(120,' JQuery','JQuery library for frontend',''),(121,' AJAX',NULL,NULL),(122,' HTML5','',''),(123,' CSS','Cascading Style Sheets',''),(124,' WPF',NULL,NULL),(125,' SQL Server 2012','',''),(126,' SSIS','',''),(127,' SSRS',NULL,NULL),(128,' Team Foundation Server(TFS)',NULL,NULL),(129,' IIS 7.0',NULL,NULL),(140,'ES6','es6',''),(141,'mytest','just a test','');
+INSERT INTO `skill` VALUES (1,'JavaScript','Any version of Javascript test','https://developer.mozilla.org/en-US/docs/Web/JavaScript'),(2,'PHP',NULL,NULL),(3,'MySQL',NULL,NULL),(4,'Oracle',NULL,NULL),(5,'Java',NULL,NULL),(6,'Visual Studio','',''),(7,'Scrum',NULL,NULL),(8,'Agile Methodology',NULL,NULL),(9,'Cisco 7600',NULL,NULL),(10,'Cisco 7200',NULL,NULL),(11,'Cisco 3800',NULL,NULL),(12,'Cisco 3600',NULL,NULL),(13,'Cisco 2900',NULL,NULL),(14,'Cisco 2800',NULL,NULL),(15,'Cisco 2600',NULL,NULL),(16,'Cisco 1800',NULL,NULL),(17,'Cisco 1700',NULL,NULL),(18,'OSPF',NULL,NULL),(19,'EIGRP',NULL,NULL),(20,'BGP',NULL,NULL),(21,'RIP v1/v2',NULL,NULL),(22,'PBR',NULL,NULL),(23,'Route Filtering',NULL,NULL),(24,'Redistribution',NULL,NULL),(25,'Summarization',NULL,NULL),(26,'Static Routing',NULL,NULL),(27,'Cisco Nexus 2K',NULL,NULL),(28,'Cisco Nexus 5K',NULL,NULL),(29,'Cisco Nexus 7K',NULL,NULL),(30,'Cisco Catalyst 2900',NULL,NULL),(31,'Cisco Catalyst 3500',NULL,NULL),(32,'Cisco Catalyst 3700',NULL,NULL),(33,'Cisco Catalyst 6500',NULL,NULL),(34,'Cisco Catalyst 4500',NULL,NULL),(35,'Cisco Catalyst 3850',NULL,NULL),(36,'Cisco Catalyst 3560',NULL,NULL),(37,'Cisco Catalyst 3750',NULL,NULL),(38,'Cisco Catalyst 2960',NULL,NULL),(39,'LAN',NULL,NULL),(40,'VTP',NULL,NULL),(41,'STP',NULL,NULL),(42,'PVST+',NULL,NULL),(43,'RPVST+',NULL,NULL),(44,'Inter VLAN routing & Multi-Layer Switch',NULL,NULL),(45,'Etherchannels',NULL,NULL),(46,'Transparent Bridging',NULL,NULL),(47,'Cisco ASA 5580-20',NULL,NULL),(48,'ACL',NULL,NULL),(49,'IPSEC',NULL,NULL),(50,'F5 Load Balancer',NULL,NULL),(51,'Checkpoint',NULL,NULL),(52,'IOS Firewall features',NULL,NULL),(53,'Palo Alto',NULL,NULL),(54,'DMZ Setup',NULL,NULL),(55,'NAT/PAT',NULL,NULL),(56,'F5 Networks (Big-IP) LTM 8900',NULL,NULL),(57,'6400',NULL,NULL),(58,'PPP',NULL,NULL),(59,'HDLC',NULL,NULL),(60,'Channelized links (T1/T3)',NULL,NULL),(61,'Fiber Optic Circuits',NULL,NULL),(62,'Frame Relay',NULL,NULL),(63,'VOIP',NULL,NULL),(64,'Ethernet (IEEE 802.3)',NULL,NULL),(65,'Fast Ethernet',NULL,NULL),(66,'Gigabit Ethernet',NULL,NULL),(67,'HSRP',NULL,NULL),(68,'GLBP',NULL,NULL),(69,'Riverbed Steelhead Appliance',NULL,NULL),(70,'Infoblox',NULL,NULL),(71,'IOS and Features',NULL,NULL),(72,'IRDP',NULL,NULL),(73,'NAT',NULL,NULL),(74,'SNMP',NULL,NULL),(75,'SYSLOG',NULL,NULL),(76,'NTP',NULL,NULL),(77,'DHCP',NULL,NULL),(78,'CDP',NULL,NULL),(79,'TFTP',NULL,NULL),(80,'FTP',NULL,NULL),(81,'TACACS+',NULL,NULL),(82,'RADIUS',NULL,NULL),(83,'Cisco ACS',NULL,NULL),(84,'Wireshark',NULL,NULL),(86,'Solarwinds',NULL,NULL),(87,'TCP dump',NULL,NULL),(88,'Windows 2003',NULL,NULL),(89,'Windows 2008 Server',NULL,NULL),(90,'FTP Server',NULL,NULL),(91,'Proxy Server',NULL,NULL),(92,'eMail Management Server',NULL,NULL),(93,'Linux',NULL,NULL),(94,'Cisco Call Manager',NULL,NULL),(95,'Exchange 2003',NULL,NULL),(96,'Microsoft Visio',NULL,NULL),(97,'Microsoft Outlook',NULL,NULL),(98,'Outlook Express',NULL,NULL),(99,'Cisco 3640',NULL,NULL),(100,'Cisco 12000',NULL,NULL),(101,'Cisco 3845',NULL,NULL),(102,'Cisco Catalyst 3550',NULL,NULL),(103,'Cisco','',''),(104,'ASA5510',NULL,NULL),(105,'ASA',NULL,NULL),(106,'Cicso 2248',NULL,NULL),(107,'Cisco 3560',NULL,NULL),(108,'Cisco 5020',NULL,NULL),(109,'Cisco 6509',NULL,NULL),(111,'Cisco Nexus',NULL,NULL),(112,'Cisco Catalyst',NULL,NULL),(113,' Visual Studio 2012/2013','',''),(114,' C#',NULL,NULL),(115,' .Net Framework 4.0/4.5',NULL,NULL),(116,' WCF',NULL,NULL),(117,' Web API',NULL,NULL),(118,' PRISM Framework',NULL,NULL),(119,' Entity Framework','',''),(120,' JQuery','JQuery library for frontend',''),(121,' AJAX',NULL,NULL),(122,' HTML5','',''),(123,' CSS','Cascading Style Sheets',''),(124,' WPF',NULL,NULL),(125,' SQL Server 2012','',''),(126,' SSIS','',''),(127,' SSRS',NULL,NULL),(128,' Team Foundation Server(TFS)',NULL,NULL),(129,' IIS 7.0',NULL,NULL),(140,'ES6','es6',''),(141,'mytest','just a test','');
 /*!40000 ALTER TABLE `skill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1578,6 +1578,186 @@ LOCK TABLES `webcontact_audit_bak` WRITE;
 INSERT INTO `webcontact_audit_bak` VALUES (1,'Fred Flintstone','freddie@bedrock.com','333-444-5555','Yabba Dabba Doo!',NULL,'jimbo@localhost',NULL,'2016-10-14 23:54:20','INSERT',2),(2,'Taylor Swift','tay@singer.com','444-333-4444','Shake it off!',NULL,'jimbo@localhost',NULL,'2016-10-15 04:58:37','INSERT',3),(3,'Taylor Swift','tay@singers.com','555-666-6969','Shake it off',NULL,'jimbo@localhost',NULL,'2016-10-15 05:19:15','INSERT',4),(4,'Taylor Swift','tay@singers.com','555-666-6969','Shake it off',NULL,'jimbo@localhost',NULL,'2016-10-15 05:23:12','INSERT',5),(5,'Taylor Swift','tay@singers.com','555-666-6969','Shake it off',NULL,'jimbo@localhost',NULL,'2016-10-15 05:19:15','DELETE',4),(6,'Taylor Swift','tay@singers.com','555-666-6969','Shake it off',NULL,'jimbo@localhost',NULL,'2016-10-15 05:23:12','DELETE',5),(7,'Clark Kent','mild@mannered.com','555-666-9999','Hey Lois',NULL,'jimbo@localhost',1,'2016-10-15 05:26:53','INSERT',6),(8,'Taylor Swift','tay@singer.com','444-333-4444','Shake it off!',NULL,'jimbo@localhost',1,'2016-10-15 04:58:37','DELETE',3);
 /*!40000 ALTER TABLE `webcontact_audit_bak` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'resume'
+--
+/*!50003 DROP FUNCTION IF EXISTS `get_candidate_job_title` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`jimbo`@`localhost` FUNCTION `get_candidate_job_title`(pi_candidate_id INT, pi_title VARCHAR(30)) RETURNS int(11)
+BEGIN
+	DECLARE v_ct_id INT;
+	
+	SELECT id FROM candidatetitles WHERE candidateId = pi_candidate_id AND titleDescription = pi_title INTO v_ct_id;
+		
+	IF ISNULL(v_ct_id) THEN		
+		INSERT INTO candidatetitles (candidateId, titleDescription) VALUES (pi_candidate_id, pi_title);
+		SELECT LAST_INSERT_ID() INTO v_ct_id;
+	END IF;
+	
+	RETURN v_ct_id;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `get_candidate_skill_id` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`jimbo`@`localhost` FUNCTION `get_candidate_skill_id`(pi_candidate_id INT, pi_skill_id INT) RETURNS int(11)
+BEGIN
+	DECLARE v_cs_id INT;
+
+	SELECT id FROM candidate_skills WHERE candidateId = pi_candidate_id AND skillId = pi_skill_id INTO v_cs_id;
+
+	IF ISNULL(v_cs_id) THEN
+		INSERT INTO candidate_skills (candidateId, skillId) VALUES (pi_candidate_id, pi_skill_id);
+		SELECT LAST_INSERT_ID() INTO v_cs_id;
+	END IF;
+
+	RETURN v_cs_id;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `jws_score` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`jimbo`@`localhost` FUNCTION `jws_score`(
+in1 varchar(255),
+in2 varchar(255)
+) RETURNS float
+    DETERMINISTIC
+BEGIN
+
+declare finestra, curString, curSub, maxSub, trasposizioni, prefixlen, maxPrefix int;
+declare char1, char2 char(1);
+declare common1, common2, old1, old2 varchar(255);
+declare trovato boolean;
+declare returnValue, jaro float;
+set maxPrefix=6; 
+set common1="";
+set common2="";
+set finestra=(length(in1)+length(in2)-abs(length(in1)-length(in2))) DIV 4
++ ((length(in1)+length(in2)-abs(length(in1)-length(in2)))/2) mod 2;
+set old1=in1;
+set old2=in2;
+
+
+set curString=1;
+while curString<=length(in1) and (curString<=(length(in2)+finestra)) do
+set curSub=curstring-finestra;
+if (curSub)<1 then
+set curSub=1;
+end if;
+set maxSub=curstring+finestra;
+if (maxSub)>length(in2) then
+set maxSub=length(in2);
+end if;
+set trovato = false;
+while curSub<=maxSub and trovato=false do
+if substr(in1,curString,1)=substr(in2,curSub,1) then
+set common1 = concat(common1,substr(in1,curString,1));
+set in2 = concat(substr(in2,1,curSub-1),concat("0",substr(in2,curSub+1,length(in2)-curSub+1)));
+set trovato=true;
+end if;
+set curSub=curSub+1;
+end while;
+set curString=curString+1;
+end while;
+
+set in2=old2;
+set curString=1;
+while curString<=length(in2) and (curString<=(length(in1)+finestra)) do
+set curSub=curstring-finestra;
+if (curSub)<1 then
+set curSub=1;
+end if;
+set maxSub=curstring+finestra;
+if (maxSub)>length(in1) then
+set maxSub=length(in1);
+end if;
+set trovato = false;
+while curSub<=maxSub and trovato=false do
+if substr(in2,curString,1)=substr(in1,curSub,1) then
+set common2 = concat(common2,substr(in2,curString,1));
+set in1 = concat(substr(in1,1,curSub-1),concat("0",substr(in1,curSub+1,length(in1)-curSub+1)));
+set trovato=true;
+end if;
+set curSub=curSub+1;
+end while;
+set curString=curString+1;
+end while;
+
+set in1=old1;
+
+
+if length(common1)<>length(common2)
+then set jaro=0;
+elseif length(common1)=0 or length(common2)=0
+then set jaro=0;
+else
+
+
+set trasposizioni=0;
+set curString=1;
+while curString<=length(common1) do
+if(substr(common1,curString,1)<>substr(common2,curString,1)) then
+set trasposizioni=trasposizioni+1;
+end if;
+set curString=curString+1;
+end while;
+set jaro=
+(
+length(common1)/length(in1)+
+length(common2)/length(in2)+
+(length(common1)-trasposizioni/2)/length(common1)
+)/3;
+
+end if; 
+
+
+set prefixlen=0;
+while (substring(in1,prefixlen+1,1)=substring(in2,prefixlen+1,1)) and (prefixlen<6) do
+set prefixlen= prefixlen+1;
+end while;
+
+
+
+return jaro+(prefixlen*0.1*(1-jaro));
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Current Database: `resume`
@@ -1936,4 +2116,4 @@ USE `resume`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-21 16:57:32
+-- Dump completed on 2019-08-27 22:38:21
