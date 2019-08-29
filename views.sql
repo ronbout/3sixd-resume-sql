@@ -44,14 +44,21 @@ SELECT c1.id, c1.executiveSummary, c1.objective,
 DROP VIEW IF EXISTS candidate_jobs_vw;
 CREATE VIEW candidate_jobs_vw AS
 SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay, j1.endPay, j1.summary,
-		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId,
-		c1.name, c1.municipality, c1.region, c1.countryCode,
-		IFNULL(j1.contactPersonId, c1.contactPersonId) AS personId,
-		cpv.formattedName AS personName, cpv.mobilePhone AS personMobilePhone,
-		cpv.workPhone AS personWorkPhone,
+		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId, 
+		c1.name AS companyName, c1.municipality AS companyMunicipality, c1.region AS companyRegion, 
+		c1.countryCode AS companyCountryCode, 
+		IFNULL(j1.contactPersonId, c1.contactPersonId) AS contactPersonId,
+		cpv.formattedName AS contactPersonFormattedName, cpv.givenName as contactPersonGivenName,
+		cpv.familyName as contactPersonFamilyName, cpv.mobilePhone AS contactPersonMobilePhone,
+		cpv.workPhone AS contactPersonWorkPhone, cpv.addressLine1 AS contactPersonAddressLine1,
+		cpv.addressLine2 AS contactPersonAddressLine2, cpv.municipality AS contactPersonMunicipality,
+		cpv.region AS contactPersonRegion, cpv.postalCode AS contactPersonPostalCode,
+		cpv.countryCode AS contactPersonCountryCode, cpv.email1 AS contactPersonEmail1,
+		cpv.website AS contactPersonWebsite,
 		GROUP_CONCAT( s1.id SEPARATOR '|' ) AS skillIds,
 		GROUP_CONCAT( s1.name SEPARATOR '|' ) AS skillNames,
 		GROUP_CONCAT( js1.usePercentage SEPARATOR '|' ) AS skillPcts,
+		GROUP_CONCAT( cs.id SEPARATOR '|') AS candidateSkillIds,
 		GROUP_CONCAT( COALESCE(cs.tested, 0) SEPARATOR '|' ) AS skillTestedFlag,
 		GROUP_CONCAT( COALESCE(cs.testResults, 0) SEPARATOR '|' ) AS skillTestResults,
 		GROUP_CONCAT( COALESCE(cs.totalMonths, 0) SEPARATOR '|' ) AS skillTotalMonths,
@@ -67,7 +74,6 @@ SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay,
 	LEFT OUTER JOIN person_with_phonetypes_vw cpv ON IFNULL(j1.contactPersonId, c1.contactPersonId) = cpv.id
 	GROUP BY j1.id
 	ORDER BY j1.id;
-
 
 SELECT * FROM candidate_jobs_vw;
 */
@@ -192,38 +198,6 @@ SELECT * FROM candidate_highlights_skills_vw;
 */
 
 /*
-DROP VIEW IF EXISTS candidate_jobs_vw;
-CREATE VIEW candidate_jobs_vw AS
-SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay, j1.endPay, j1.summary,
-		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId,
-		c1.name AS companyName, c1.municipality AS companyMunicipality, c1.region as companyRegion, 
-		c1.countryCode as companyCountryCode, IFNULL(j1.contactPersonId, c1.contactPersonId) AS contactPersonId,
-		cpv.formattedName AS contactPersonName, cpv.givenName as contactPersonGivenName,
-		cpv.familyName as contactPersonFamilyName, cpv.mobilePhone AS contactPersonMobilePhone,
-		cpv.workPhone AS contactPersonWorkPhone,
-		GROUP_CONCAT( s1.id SEPARATOR '|' ) AS skillIds,
-		GROUP_CONCAT( s1.name SEPARATOR '|' ) AS skillNames,
-		GROUP_CONCAT( js1.usePercentage SEPARATOR '|' ) AS skillPcts,
-		GROUP_CONCAT( COALESCE(cs.tested, 0) SEPARATOR '|' ) AS skillTestedFlag,
-		GROUP_CONCAT( COALESCE(cs.testResults, 0) SEPARATOR '|' ) AS skillTestResults,
-		GROUP_CONCAT( COALESCE(cs.totalMonths, 0) SEPARATOR '|' ) AS skillTotalMonths,
-		GROUP_CONCAT( cs.techtagId SEPARATOR '|' ) AS skillTags,
-		GROUP_CONCAT( tt.name SEPARATOR '|' ) AS skillTagNames
-	FROM candidatejobs j1
-	JOIN company c1 ON j1.companyId = c1.id
-	LEFT OUTER JOIN candidatejob_skills js1 ON j1.id = js1.jobId
-	LEFT OUTER JOIN candidate_skills cs ON js1.candidateSkillId = cs.id
-	LEFT OUTER JOIN skill s1 ON cs.skillId = s1.id
-	LEFT OUTER JOIN techtag tt ON cs.techtagId = tt.id
-	LEFT OUTER JOIN candidatetitles jt1 ON j1.jobTitleId = jt1.id
-	LEFT OUTER JOIN person_with_phonetypes_vw cpv ON IFNULL(j1.contactPersonId, c1.contactPersonId) = cpv.id
-	GROUP BY j1.id
-	ORDER BY j1.id;
-
-SELECT * FROM candidate_jobs_vw;
-*/
-
-/*
 DROP VIEW IF EXISTS candidate_job_highlights_skills_vw;
 CREATE VIEW candidate_job_highlights_skills_vw AS
 SELECT cjh.id, cj.id AS jobId, cj.candidateId, cjh.highlight, cjh.sequence, cjh.includeInSummary,
@@ -238,42 +212,6 @@ GROUP BY cjh.id
 ORDER BY cjh.id;
 
 SELECT * FROM candidate_job_highlights_skills_vw;
-*/
-
-/*
-DROP VIEW IF EXISTS candidate_jobs_vw;
-CREATE VIEW candidate_jobs_vw AS
-SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay, j1.endPay, j1.summary,
-		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId,
-		c1.name AS companyName, c1.municipality AS companyMunicipality, c1.region AS companyRegion,
-		c1.countryCode AS companyCountryCode, IFNULL(j1.contactPersonId, c1.contactPersonId) AS contactPersonId,
-		cpv.formattedName AS contactPersonFormattedName, cpv.givenName as contactPersonGivenName,
-		cpv.familyName as contactPersonFamilyName, cpv.mobilePhone AS contactPersonMobilePhone,
-		cpv.workPhone AS contactPersonWorkPhone, cpv.addressLine1 AS contactPersonAddressLine1,
-		cpv.addressLine2 AS contactPersonAddressLine2, cpv.municipality AS contactPersonMunicipality,
-		cpv.region AS contactPersonRegion, cpv.postalCode AS contactPersonPostalCode,
-		cpv.countryCode AS contactPersonCountryCode, cpv.email1 AS contactPersonEmail1,
-		cpv.website AS contactPersonWebsite,
-		GROUP_CONCAT( s1.id SEPARATOR '|' ) AS skillIds,
-		GROUP_CONCAT( s1.name SEPARATOR '|' ) AS skillNames,
-		GROUP_CONCAT( js1.usePercentage SEPARATOR '|' ) AS skillPcts,
-		GROUP_CONCAT( COALESCE(cs.tested, 0) SEPARATOR '|' ) AS skillTestedFlag,
-		GROUP_CONCAT( COALESCE(cs.testResults, 0) SEPARATOR '|' ) AS skillTestResults,
-		GROUP_CONCAT( COALESCE(cs.totalMonths, 0) SEPARATOR '|' ) AS skillTotalMonths,
-		GROUP_CONCAT( cs.techtagId SEPARATOR '|' ) AS skillTags,
-		GROUP_CONCAT( tt.name SEPARATOR '|' ) AS skillTagNames
-	FROM candidatejobs j1
-	JOIN company c1 ON j1.companyId = c1.id
-	LEFT OUTER JOIN candidatejob_skills js1 ON j1.id = js1.jobId
-	LEFT OUTER JOIN candidate_skills cs ON js1.candidateSkillId = cs.id
-	LEFT OUTER JOIN skill s1 ON cs.skillId = s1.id
-	LEFT OUTER JOIN techtag tt ON cs.techtagId = tt.id
-	LEFT OUTER JOIN candidatetitles jt1 ON j1.jobTitleId = jt1.id
-	LEFT OUTER JOIN person_with_phonetypes_vw cpv ON IFNULL(j1.contactPersonId, c1.contactPersonId) = cpv.id
-	GROUP BY j1.id
-	ORDER BY j1.id;
-
-SELECT * FROM candidate_jobs_vw;
 */
 
 /*
@@ -406,43 +344,6 @@ SELECT ed1.id, ed1.candidateId, ed1.schoolName, ed1.schoolMunicipality, ed1.scho
 	ORDER BY ed1.id;
 
 SELECT * FROM candidate_education_vw;
-*/
-
-/*
-DROP VIEW IF EXISTS candidate_jobs_vw;
-CREATE VIEW candidate_jobs_vw AS
-SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay, j1.endPay, j1.summary,
-		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId, 
-		c1.name AS companyName, c1.municipality AS companyMunicipality, c1.region AS companyRegion, 
-		c1.countryCode AS companyCountryCode, IFNULL(j1.contactPersonId, c1.contactPersonId) AS contactPersonId,
-		cpv.formattedName AS contactPersonFormattedName, cpv.givenName as contactPersonGivenName,
-		cpv.familyName as contactPersonFamilyName, cpv.mobilePhone AS contactPersonMobilePhone,
-		cpv.workPhone AS contactPersonWorkPhone, cpv.addressLine1 AS contactPersonAddressLine1,
-		cpv.addressLine2 AS contactPersonAddressLine2, cpv.municipality AS contactPersonMunicipality,
-		cpv.region AS contactPersonRegion, cpv.postalCode AS contactPersonPostalCode,
-		cpv.countryCode AS contactPersonCountryCode, cpv.email1 AS contactPersonEmail1,
-		cpv.website AS contactPersonWebsite,
-		GROUP_CONCAT( s1.id SEPARATOR '|' ) AS skillIds,
-		GROUP_CONCAT( s1.name SEPARATOR '|' ) AS skillNames,
-		GROUP_CONCAT( js1.usePercentage SEPARATOR '|' ) AS skillPcts,
-		GROUP_CONCAT( cs.id SEPARATOR '|') AS candidateSkillIds,
-		GROUP_CONCAT( COALESCE(cs.tested, 0) SEPARATOR '|' ) AS skillTestedFlag,
-		GROUP_CONCAT( COALESCE(cs.testResults, 0) SEPARATOR '|' ) AS skillTestResults,
-		GROUP_CONCAT( COALESCE(cs.totalMonths, 0) SEPARATOR '|' ) AS skillTotalMonths,
-		GROUP_CONCAT( cs.techtagId SEPARATOR '|' ) AS skillTags,
-		GROUP_CONCAT( tt.name SEPARATOR '|' ) AS skillTagNames
-	FROM candidatejobs j1
-	JOIN company c1 ON j1.companyId = c1.id
-	LEFT OUTER JOIN candidatejob_skills js1 ON j1.id = js1.jobId
-	LEFT OUTER JOIN candidate_skills cs ON js1.candidateSkillId = cs.id
-	LEFT OUTER JOIN skill s1 ON cs.skillId = s1.id
-	LEFT OUTER JOIN techtag tt ON cs.techtagId = tt.id
-	LEFT OUTER JOIN candidatetitles jt1 ON j1.jobTitleId = jt1.id
-	LEFT OUTER JOIN person_with_phonetypes_vw cpv ON IFNULL(j1.contactPersonId, c1.contactPersonId) = cpv.id
-	GROUP BY j1.id
-	ORDER BY j1.id;
-
-SELECT * FROM candidate_jobs_vw;
 */
 
 /*
