@@ -62,8 +62,8 @@ SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay,
 		GROUP_CONCAT( COALESCE(cs.tested, 0) SEPARATOR '|' ) AS skillTestedFlag,
 		GROUP_CONCAT( COALESCE(cs.testResults, 0) SEPARATOR '|' ) AS skillTestResults,
 		GROUP_CONCAT( COALESCE(cs.totalMonths, 0) SEPARATOR '|' ) AS skillTotalMonths,
-		GROUP_CONCAT( cs.resumeTechtagId SEPARATOR '|' ) AS resumeTechtags,
-		GROUP_CONCAT( tt.name SEPARATOR '|' ) AS resumeTechtagNames
+		GROUP_CONCAT( IFNULL(cs.resumeTechtagId, '') SEPARATOR '|' ) AS resumeTechtags,
+		GROUP_CONCAT( IFNULL(tt.name, '') SEPARATOR '|' ) AS resumeTechtagNames
 	FROM candidatejobs j1
 	JOIN company c1 ON j1.companyId = c1.id
 	LEFT OUTER JOIN candidatejob_skills js1 ON j1.id = js1.jobId
@@ -73,7 +73,7 @@ SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay,
 	LEFT OUTER JOIN candidatetitles jt1 ON j1.jobTitleId = jt1.id
 	LEFT OUTER JOIN person_with_phonetypes_vw cpv ON IFNULL(j1.contactPersonId, c1.contactPersonId) = cpv.id
 	GROUP BY j1.id
-	ORDER BY j1.id;
+	ORDER BY j1.id 
 
 SELECT * FROM candidate_jobs_vw;
 */
