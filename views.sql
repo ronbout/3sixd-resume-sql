@@ -12,32 +12,6 @@ GROUP BY formattedName
 ORDER BY familyName;
 
 SELECT * FROM person_with_phonetypes_vw;
-
-DROP VIEW IF EXISTS candidate_basic_vw;
-CREATE VIEW candidate_basic_vw AS
-SELECT c1.id, c1.executiveSummary, c1.objective,
-		IFNULL(c1.agencyContactId, a1.contactPersonId) AS agencyContactId, apv.formattedName AS agencyContactFormattedName,
-		apv.mobilePhone AS agencyContactMobilePhone, apv.workPhone AS agencyContactWorkPhone,	c1.personId,
-		p1.formattedName AS personFormattedName, p1.givenName AS personGivenName,
-		p1.middleName AS personMiddleName, p1.familyName AS personFamilyName,
-		p1.affix AS personAffix, p1.addressLine1 AS personAddr1, p1.addressLine2 AS personAddr2,
-		p1.municipality AS personMunicipality, p1.region AS personRegion, p1.postalCode AS personPostalCode,
-		p1.countryCode AS personCountryCode, p1.email1 AS personEmail1, p1.email2 AS personEmail2,
-		p1.website AS personWebsite,
-		c1.agencyId, a1.name AS agencyName, a1.description AS agencyDesc, a1.addressLine1 AS agencyAddr1,
-		a1.addressLine2 AS agencyAddr2, a1.municipality AS agencyCity, a1.region AS agencyState,
-		a1.postalCode AS agencyZip,	a1.countryCode AS agencyCountry,
-		a1.email AS agencyEmail, a1.website AS agencyWebsite,
-		cv.homePhone AS personHomePhone, cv.mobilePhone AS personMobilePhone, cv.workPhone AS personWorkPhone,
-		cv.jobSkillName, cv.edSkillName, cv.certSkillName
-	FROM candidate c1
-	JOIN person p1 ON c1.personId = p1.id
-	LEFT OUTER JOIN company a1 ON c1.agencyId = a1.id
-	LEFT OUTER JOIN candidate_with_phonetypes_skills_vw cv ON c1.id = cv.id
-	LEFT OUTER JOIN person_with_phonetypes_vw apv ON IFNULL(c1.agencyContactId, a1.contactPersonId) = apv.id;
-
-
- SELECT * FROM candidate_basic_vw;
 */
 
 /*
@@ -133,11 +107,11 @@ GROUP BY id
 ORDER BY LastName;
  
 SELECT * FROM candidate_with_phonetypes_jobskills_vw;
-
+*/
 
 DROP VIEW IF EXISTS candidate_basic_vw;
 CREATE VIEW candidate_basic_vw AS
-SELECT c1.id, c1.executiveSummary, c1.objective,
+SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective,
 		IFNULL(c1.agencyContactId, a1.contactPersonId) AS agencyContactId, apv.formattedName AS agencyContactFormattedName,
 		apv.mobilePhone AS agencyContactMobilePhone, apv.workPhone AS agencyContactWorkPhone,	c1.personId,
 		p1.formattedName AS personFormattedName, p1.givenName AS personGivenName,
@@ -160,7 +134,7 @@ SELECT c1.id, c1.executiveSummary, c1.objective,
 
 
  SELECT * FROM candidate_basic_vw;
-
+ /*
 
 DROP VIEW IF EXISTS company_vw;
 CREATE VIEW company_vw AS
