@@ -8,7 +8,7 @@ select p1.id, p1.formattedName, p1.givenName, p1.middleName, p1.familyName, p1.a
 	GROUP_CONCAT( case when phoneType = 'Mobile' then phoneNumber end) AS mobilePhone,
 	GROUP_CONCAT( case when phoneType = 'Work' then phoneNumber end) AS workPhone
 from person_with_phones_vw p1
-GROUP BY formattedName
+GROUP BY id
 ORDER BY familyName;
 
 SELECT * FROM person_with_phonetypes_vw;
@@ -109,6 +109,7 @@ ORDER BY LastName;
 SELECT * FROM candidate_with_phonetypes_jobskills_vw;
 */
 
+/*
 DROP VIEW IF EXISTS candidate_basic_vw;
 CREATE VIEW candidate_basic_vw AS
 SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective,
@@ -134,6 +135,7 @@ SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective,
 
 
  SELECT * FROM candidate_basic_vw;
+ */
  /*
 
 DROP VIEW IF EXISTS company_vw;
