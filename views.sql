@@ -325,19 +325,35 @@ SELECT * FROM candidate_education_vw;
 /*
 DELIMITER $$
 DROP FUNCTION IF EXISTS get_candidate_job_title $$
-CREATE FUNCTION get_candidate_job_title (pi_candidate_id INT, pi_title VARCHAR(30))
+CREATE FUNCTION get_candidate_job_title (
+	pi_candidate_id INT, 
+	pi_title VARCHAR(60),
+	pi_jt_id INT,
+	pi_job_id INT
+)
 RETURNS INT
 BEGIN
-	DECLARE v_ct_id INT;
+	DECLARE v_tmp_id INT;
 	
-	SELECT id FROM candidatetitles WHERE candidateId = pi_candidate_id AND titleDescription = pi_title INTO v_ct_id;
+	SELECT id FROM candidatetitles WHERE candidateId = pi_candidate_id AND titleDescription = pi_title INTO v_tmp_id;
+	IF v_tmp_id IS NOT NULL THEN
+		RETURN v_tmp_id;
+	END IF;
 		
-	IF ISNULL(v_ct_id) THEN		
-		INSERT INTO candidatetitles (candidateId, titleDescription) VALUES (pi_candidate_id, pi_title);
-		SELECT LAST_INSERT_ID() INTO v_ct_id;
+	IF pi_jt_id IS NOT NULL THEN
+		SELECT count(*) FROM candidatejobs WHERE jobTitleId = pi_jt_id AND id != pi_job_id INTO v_tmp_id;
+		
+		IF v_tmp_id = 0 THEN
+			UPDATE candidatetitles SET titleDescription = pi_title WHERE id = pi_jt_id;
+			RETURN pi_jt_id;
+		END IF;
 	END IF;
 	
-	RETURN v_ct_id;
+				
+	INSERT INTO candidatetitles (candidateId, titleDescription) VALUES (pi_candidate_id, pi_title);
+	SELECT LAST_INSERT_ID() INTO v_tmp_id;
+	
+	RETURN v_tmp_id;
 
 END
 $$
