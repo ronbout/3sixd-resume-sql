@@ -20,7 +20,7 @@ CREATE VIEW candidate_jobs_vw AS
 SELECT j1.id, j1.candidateId, j1.startDate, j1.endDate, j1.payType, j1.startPay, j1.endPay, j1.summary,
 		j1.jobTitleId, jt1.titleDescription AS jobTitle, j1.companyId, 
 		c1.name AS companyName, c1.municipality AS companyMunicipality, c1.region AS companyRegion, 
-		c1.countryCode AS companyCountryCode, 
+		c1.countryCode AS companyCountryCode,  c1.contactPersonId AS companyContactPersonId,
 		IFNULL(j1.contactPersonId, c1.contactPersonId) AS contactPersonId,
 		cpv.formattedName AS contactPersonFormattedName, cpv.givenName as contactPersonGivenName,
 		cpv.familyName as contactPersonFamilyName, cpv.mobilePhone AS contactPersonMobilePhone,
