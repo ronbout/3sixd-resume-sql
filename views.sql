@@ -109,10 +109,10 @@ ORDER BY LastName;
 SELECT * FROM candidate_with_phonetypes_jobskills_vw;
 */
 
-/*
+
 DROP VIEW IF EXISTS candidate_basic_vw;
 CREATE VIEW candidate_basic_vw AS
-SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective,
+SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective, c1.userId,
 		IFNULL(c1.agencyContactId, a1.contactPersonId) AS agencyContactId, apv.formattedName AS agencyContactFormattedName,
 		apv.mobilePhone AS agencyContactMobilePhone, apv.workPhone AS agencyContactWorkPhone,	c1.personId,
 		p1.formattedName AS personFormattedName, p1.givenName AS personGivenName,
@@ -135,7 +135,7 @@ SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective,
 
 
  SELECT * FROM candidate_basic_vw;
- */
+ 
  /*
 
 DROP VIEW IF EXISTS company_vw;
