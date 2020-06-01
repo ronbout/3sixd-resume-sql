@@ -109,7 +109,7 @@ ORDER BY LastName;
 SELECT * FROM candidate_with_phonetypes_jobskills_vw;
 */
 
-
+/*
 DROP VIEW IF EXISTS candidate_basic_vw;
 CREATE VIEW candidate_basic_vw AS
 SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective, c1.userId,
@@ -135,7 +135,7 @@ SELECT c1.id, c1.jobTitle, c1.executiveSummary, c1.objective, c1.userId,
 
 
  SELECT * FROM candidate_basic_vw;
- 
+ */
  /*
 
 DROP VIEW IF EXISTS company_vw;
@@ -289,7 +289,7 @@ RETURNS INT
 BEGIN
 	DECLARE v_cs_id INT;
 
-	SELECT id FROM candidate_skills WHERE candidateId = pi_candidate_id AND skillId = pi_skill_id INTO v_cs_id;
+	SELECT id FROM candidate_skills WHERE candidateId = pi_candidate_id AND skillId = pi_skill_id LIMIT 1 INTO v_cs_id;
 
 	IF ISNULL(v_cs_id) THEN
 		INSERT INTO candidate_skills (candidateId, skillId) VALUES (pi_candidate_id, pi_skill_id);
